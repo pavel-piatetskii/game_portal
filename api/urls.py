@@ -1,7 +1,7 @@
 from django.conf.urls import url
-from .views import main
+from .views import UserView
 
 urlpatterns = [
-    url('api', main),
-    url('', main)
+    url('api', UserView.as_view()),
+    #url('', main)
 ]
