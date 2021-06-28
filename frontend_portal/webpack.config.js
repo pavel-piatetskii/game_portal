@@ -16,6 +16,17 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
     ],
   },
   optimization: {
@@ -25,7 +36,7 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": {
         // This has effect on the react lib size
-        NODE_ENV: JSON.stringify("production"),
+        NODE_ENV: JSON.stringify("development"),
       },
     }),
   ],
