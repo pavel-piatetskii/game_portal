@@ -1,7 +1,10 @@
 //import logo from './logo.svg';
 import './App.scss';
+import Homepage from './Content/Homepage'
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+
 function App() {
 
   const [content, setContent] = useState('homepage');
@@ -9,15 +12,16 @@ function App() {
 
   
   // State controlling ghreetings component (now disabled for debugging)
-  // const [showGreetings, setShowGreetings] = useState(true);
+  //const [showGreetings, setShowGreetings] = useState(true);
   const [contentComponent, setContentComponent] = useState('');  
   
   
   useEffect(() => {
     const contentComponents = {
       homepage: <Homepage setContent={setContent}/>,
-      // games: <Projects projects={projects} showImageViewer={showImageViewer} setShowImageViewer={setShowImageViewer}/>,
-      // highscores: <About showImageViewer={showImageViewer} setShowImageViewer={setShowImageViewer}/>,
+      games: <Games />,
+      highscores: <Highscores />,
+      signup: <SignUp />,
     };
     setContentComponent(contentComponents[content]);
   }, [content]);
@@ -25,8 +29,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello!</h1>
+        <h1>NavBar</h1>
       </header>
+      <section>Content</section>
+      <footer>Footer</footer>
     </div>
   );
 }
