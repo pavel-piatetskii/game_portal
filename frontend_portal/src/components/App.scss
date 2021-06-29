@@ -1,7 +1,14 @@
-h1 {
-  color: aqua;
+
+#app {
+  width: 100%;
 }
 
-div section {
+.App {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+div, section {
   display: flex;
 }
