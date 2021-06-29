@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NavBar.scss'
 export default function NavBar(props) {
 
   const {setContent} = props;
+  const [signInForm, showSignInForm] = useState(false);
 
   return (<nav className="navbar">
     <div className="navbar__left">
@@ -16,6 +17,7 @@ export default function NavBar(props) {
       <span>PORTAL</span>
     </div>
       <p className="navbar__menu-item" onClick={() => setContent('signup')}>Sign Up</p>
+      <p className="navbar__menu-item" onClick={() => showSignInForm(true)}>Sign In</p>
 
     </nav>)
 }
