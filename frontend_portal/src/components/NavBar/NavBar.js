@@ -4,7 +4,7 @@ export default function NavBar(props) {
 
   const {setContent} = props;
 
-  return (<section className="navbar">
+  return (<nav className="navbar">
     <div className="navbar__left">
       <p className="navbar__menu-item" onClick={() => setContent('homepage')}>Home</p>
       <p className="navbar__menu-item" onClick={() => setContent('games')}>Games</p>
@@ -17,5 +17,5 @@ export default function NavBar(props) {
     </div>
       <p className="navbar__menu-item" onClick={() => setContent('signup')}>Sign Up</p>
 
-    </section>)
+    </nav>)
 }

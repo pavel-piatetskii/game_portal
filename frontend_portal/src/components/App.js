@@ -5,6 +5,7 @@ import Games from './Content/Games'
 import Highscores from './Content/Highscores'
 import SignUp from './Content/SignUp'
 import NavBar from './NavBar/NavBar'
+import Footer from './Footer';
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -34,7 +35,7 @@ function App() {
     <div className="App">
       <NavBar setContent={setContent}/>
       <section className="content">{contentComponent}</section>
-      <footer>Footer</footer>
+      <Footer />
     </div>
   );
 }

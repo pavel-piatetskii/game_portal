@@ -3,12 +3,23 @@
   width: 100%;
 }
 
+body {
+  margin: 0;
+}
+
 .App {
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  background-color: tan;
   width: 100%;
+  min-height: 100vh;
 }
 
-div, section {
+div, section, nav, footer {
   display: flex;
+}
+
+.content {
+  height: auto;
 }
