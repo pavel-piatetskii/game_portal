@@ -1,6 +1,10 @@
 //import logo from './logo.svg';
 import './App.scss';
 import Homepage from './Content/Homepage'
+import Games from './Content/Games'
+import Highscores from './Content/Highscores'
+import SignUp from './Content/SignUp'
+import NavBar from './NavBar/NavBar'
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -28,10 +32,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>NavBar</h1>
-      </header>
-      <section>Content</section>
+      <NavBar setContent={setContent}/>
+      <section className="content">{contentComponent}</section>
       <footer>Footer</footer>
     </div>
   );

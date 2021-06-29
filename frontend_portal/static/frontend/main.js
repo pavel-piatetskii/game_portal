@@ -16,7 +16,29 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.scss */ \"./src/components/App.scss\");\n/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_App_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Content_Homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Content/Homepage */ \"./src/components/Content/Homepage.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n//import logo from './logo.svg';\n\n\n\n\n\nfunction App() {\n  const [content, setContent] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)('homepage'); //const [showImageViewer, setShowImageViewer] = useState(false);\n  // State controlling ghreetings component (now disabled for debugging)\n  //const [showGreetings, setShowGreetings] = useState(true);\n\n  const [contentComponent, setContentComponent] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)('');\n  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {\n    const contentComponents = {\n      homepage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_Content_Homepage__WEBPACK_IMPORTED_MODULE_1__.default, {\n        setContent: setContent\n      }),\n      games: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Games, null),\n      highscores: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Highscores, null),\n      signup: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(SignUp, null)\n    };\n    setContentComponent(contentComponents[content]);\n  }, [content]);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(\"div\", {\n    className: \"App\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(\"header\", {\n    className: \"App-header\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(\"h1\", null, \"NavBar\")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(\"section\", null, \"Content\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(\"footer\", null, \"Footer\"));\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack://frontend/./src/components/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.scss */ \"./src/components/App.scss\");\n/* harmony import */ var _App_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_App_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Content_Homepage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Content/Homepage */ \"./src/components/Content/Homepage.js\");\n/* harmony import */ var _Content_Games__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Content/Games */ \"./src/components/Content/Games.js\");\n/* harmony import */ var _Content_Highscores__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Content/Highscores */ \"./src/components/Content/Highscores.js\");\n/* harmony import */ var _Content_SignUp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Content/SignUp */ \"./src/components/Content/SignUp.js\");\n/* harmony import */ var _NavBar_NavBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NavBar/NavBar */ \"./src/components/NavBar/NavBar.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n//import logo from './logo.svg';\n\n\n\n\n\n\n\n\n\nfunction App() {\n  const [content, setContent] = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)('homepage'); //const [showImageViewer, setShowImageViewer] = useState(false);\n  // State controlling ghreetings component (now disabled for debugging)\n  //const [showGreetings, setShowGreetings] = useState(true);\n\n  const [contentComponent, setContentComponent] = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)('');\n  (0,react__WEBPACK_IMPORTED_MODULE_6__.useEffect)(() => {\n    const contentComponents = {\n      homepage: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Content_Homepage__WEBPACK_IMPORTED_MODULE_1__.default, {\n        setContent: setContent\n      }),\n      games: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Content_Games__WEBPACK_IMPORTED_MODULE_2__.default, null),\n      highscores: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Content_Highscores__WEBPACK_IMPORTED_MODULE_3__.default, null),\n      signup: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_Content_SignUp__WEBPACK_IMPORTED_MODULE_4__.default, null)\n    };\n    setContentComponent(contentComponents[content]);\n  }, [content]);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(\"div\", {\n    className: \"App\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_5__.default, {\n    setContent: setContent\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(\"section\", {\n    className: \"content\"\n  }, contentComponent), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(\"footer\", null, \"Footer\"));\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack://frontend/./src/components/App.js?");
+
+/***/ }),
+
+/***/ "./src/components/Content/Games.js":
+/*!*****************************************!*\
+  !*** ./src/components/Content/Games.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ Games; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nfunction Games(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"section\", null, \"Games\");\n}\n;\n\n//# sourceURL=webpack://frontend/./src/components/Content/Games.js?");
+
+/***/ }),
+
+/***/ "./src/components/Content/Highscores.js":
+/*!**********************************************!*\
+  !*** ./src/components/Content/Highscores.js ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ Highscores; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nfunction Highscores(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"section\", null, \"Highscores\");\n}\n;\n\n//# sourceURL=webpack://frontend/./src/components/Content/Highscores.js?");
 
 /***/ }),
 
@@ -27,7 +49,29 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction Homepage(props) {\n  return /*#__PURE__*/React.createElement(\"section\", null, \"Homepage\");\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Homepage);\n\n//# sourceURL=webpack://frontend/./src/components/Content/Homepage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ Homepage; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nfunction Homepage(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"section\", null, \"Homepage\");\n}\n;\n\n//# sourceURL=webpack://frontend/./src/components/Content/Homepage.js?");
+
+/***/ }),
+
+/***/ "./src/components/Content/SignUp.js":
+/*!******************************************!*\
+  !*** ./src/components/Content/SignUp.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ SignUp; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nfunction SignUp(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"section\", null, \"SignUp\");\n}\n;\n\n//# sourceURL=webpack://frontend/./src/components/Content/SignUp.js?");
+
+/***/ }),
+
+/***/ "./src/components/NavBar/NavBar.js":
+/*!*****************************************!*\
+  !*** ./src/components/NavBar/NavBar.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ NavBar; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nfunction NavBar(props) {\n  const {\n    setContent\n  } = props;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"section\", {\n    className: \"navbar\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    className: \"navbar__menu-item\",\n    onClick: () => setContent('homepage')\n  }, \"Home\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    className: \"navbar__menu-item\",\n    onClick: () => setContent('games')\n  }, \"Games\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    className: \"navbar__menu-item\",\n    onClick: () => setContent('highscores')\n  }, \"Highscores\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    className: \"navbar__menu-item\",\n    onClick: () => setContent('signup')\n  }, \"Sign Up\"));\n}\n\n//# sourceURL=webpack://frontend/./src/components/NavBar/NavBar.js?");
 
 /***/ }),
 

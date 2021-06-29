@@ -1,7 +1,7 @@
-function Highscores(props) {
+import React from 'react';
+
+export default function Highscores(props) {
   return (
     <section>Highscores</section>
   );
-}
-
-export default Highscores;
+};

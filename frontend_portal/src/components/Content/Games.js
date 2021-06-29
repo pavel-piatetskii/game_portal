@@ -1,7 +1,7 @@
-function Games(props) {
+import React from 'react';
+
+export default function Games(props) {
   return (
     <section>Games</section>
   );
-}
-
-export default Games;
+};
