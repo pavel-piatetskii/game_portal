@@ -1,0 +1,15 @@
+.signin-form {
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+
+  &__wrapper {
+    align-items: center;
+  }
+
+  &__input {
+    font-size: 1vw;
+    width: 8em;
+    margin-left: 0.5vw;
+  }
+}

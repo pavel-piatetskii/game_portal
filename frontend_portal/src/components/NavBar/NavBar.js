@@ -4,7 +4,7 @@ import SignInForm from './SignInForm';
 export default function NavBar(props) {
 
   const {setContent} = props;
-  const [showSignInForm, setShowSignInForm] = useState(false);
+  const [showSignInForm, setShowSignInForm] = useState(true);
 
   return (<nav className="navbar">
     <div className="navbar__left">
@@ -18,7 +18,7 @@ export default function NavBar(props) {
       <span>PORTAL</span>
     </div>
       <div className="navbar__right">
-        {!showSignInForm && (<div className="singup-signin">
+        {!showSignInForm && (<div className="navbar__right__buttons">
           <p className="navbar__menu-item" onClick={() => setContent('signup')}>Sign Up</p>
           <p className="navbar__menu-item" onClick={() => setShowSignInForm(true)}>Sign In</p>
         </div>)}

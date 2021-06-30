@@ -11,14 +11,19 @@ export default function SignInForm(props) {
   }
 
   return (
-    <div className="signin-form">
-      <form>
-        <label className="signin-form__label" htmlFor="login">Login</label>
-        <input className="signin-form__input" type="text" id="login" name="login"></input>
-        <label className="signin-form__label" htmlFor="password">Password</label>
-        <input className="signin-form__input" type="password" id="password" name="password"></input>
+      <form className="signin-form">
+        
+        <div className="signin-form__wrapper">
+          <label className="signin-form__label" htmlFor="login">Login</label>
+          <input className="signin-form__input" type="text" id="login" name="login"></input>
+        </div>
+
+        <div className="signin-form__wrapper">
+          <label className="signin-form__label" htmlFor="password">Password</label>
+          <input className="signin-form__input" type="password" id="password" name="password"></input>
+        </div>
+        
         <button type="submit" onClick={(e) => clickLogIn(e)}>Log in</button>
       </form>
-    </div>
   );
 };
