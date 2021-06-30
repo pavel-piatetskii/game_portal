@@ -2,6 +2,7 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  font-size: 1.2vw;
 
   &__wrapper {
     align-items: center;
@@ -9,7 +10,11 @@
 
   &__input {
     font-size: 1vw;
+    height: 1.5em;
     width: 8em;
     margin-left: 0.5vw;
+
+    border: 0.1vw solid grey;
+    border-radius: 0.2em;
   }
 }
