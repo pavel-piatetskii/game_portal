@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './NavBar.scss'
+import SignInForm from './SignInForm';
 export default function NavBar(props) {
 
   const {setContent} = props;
-  const [signInForm, showSignInForm] = useState(false);
+  const [showSignInForm, setShowSignInForm] = useState(false);
 
   return (<nav className="navbar">
     <div className="navbar__left">
@@ -16,8 +17,13 @@ export default function NavBar(props) {
       <i className="fa fa-shield navbar__center__icon"></i>
       <span>PORTAL</span>
     </div>
-      <p className="navbar__menu-item" onClick={() => setContent('signup')}>Sign Up</p>
-      <p className="navbar__menu-item" onClick={() => showSignInForm(true)}>Sign In</p>
+      <div className="navbar__right">
+        {!showSignInForm && (<div className="singup-signin">
+          <p className="navbar__menu-item" onClick={() => setContent('signup')}>Sign Up</p>
+          <p className="navbar__menu-item" onClick={() => setShowSignInForm(true)}>Sign In</p>
+        </div>)}
+        {showSignInForm && <SignInForm setShowSignInForm={setShowSignInForm}/>}
+      </div>
 
     </nav>)
 }
