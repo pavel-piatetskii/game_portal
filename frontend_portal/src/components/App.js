@@ -7,36 +7,38 @@ import SignUp from './Content/SignUp'
 import NavBar from './NavBar/NavBar'
 import Footer from './Footer';
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 function App() {
 
-  const [content, setContent] = useState('homepage');
   //const [showImageViewer, setShowImageViewer] = useState(false);
-
   
   // State controlling ghreetings component (now disabled for debugging)
   //const [showGreetings, setShowGreetings] = useState(true);
-  const [contentComponent, setContentComponent] = useState('');  
   
-  
-  useEffect(() => {
-    const contentComponents = {
-      homepage: <Homepage setContent={setContent}/>,
-      games: <Games />,
-      highscores: <Highscores />,
-      signup: <SignUp />,
-    };
-    setContentComponent(contentComponents[content]);
-  }, [content]);
 
   return (
-    <div className="App">
-      <NavBar setContent={setContent}/>
-      <section className="content">{contentComponent}</section>
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Homepage />
+          </Route>
+          <Route path="/games">
+            <Games />
+          </Route>
+          <Route path="/highscores">
+            <Highscores />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

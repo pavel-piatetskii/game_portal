@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './NavBar.scss'
 import SignInForm from './SignInForm';
+import { Link } from 'react-router-dom';
+
 export default function NavBar(props) {
 
   const {setContent} = props;
-  const [showSignInForm, setShowSignInForm] = useState(true);
+  const [showSignInForm, setShowSignInForm] = useState(false);
 
-  return (<nav className="navbar">
+    return (<nav className="navbar">
     <div className="navbar__left">
-      <p className="navbar__menu-item" onClick={() => setContent('homepage')}>Home</p>
-      <p className="navbar__menu-item" onClick={() => setContent('games')}>Games</p>
-      <p className="navbar__menu-item" onClick={() => setContent('highscores')}>Highscores</p>
+      <Link className="navbar__menu-item" to='/'>Home</Link>
+      <Link className="navbar__menu-item" to='/games'>Games</Link>
+      <Link className="navbar__menu-item" to='/highscores'>Highscores</Link>
     </div>
     <div className="navbar__center">
       <span>GAME</span>
@@ -19,7 +21,7 @@ export default function NavBar(props) {
     </div>
       <div className="navbar__right">
         {!showSignInForm && (<div className="navbar__right__buttons">
-          <p className="navbar__menu-item" onClick={() => setContent('signup')}>Sign Up</p>
+          <Link className="navbar__menu-item" to='signup'>Sign Up</Link>
           <p className="navbar__menu-item" onClick={() => setShowSignInForm(true)}>Sign In</p>
         </div>)}
         {showSignInForm && <SignInForm setShowSignInForm={setShowSignInForm}/>}
