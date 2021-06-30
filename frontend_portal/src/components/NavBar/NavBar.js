@@ -10,9 +10,9 @@ export default function NavBar(props) {
 
     return (<nav className="navbar">
     <div className="navbar__left">
-      <Link className="navbar__menu-item" to='/'>Home</Link>
-      <Link className="navbar__menu-item" to='/games'>Games</Link>
-      <Link className="navbar__menu-item" to='/highscores'>Highscores</Link>
+      <Link className="navbar__menu-item" to='/'>HOME</Link>
+      <Link className="navbar__menu-item" to='/games'>GAMES</Link>
+      <Link className="navbar__menu-item" to='/highscores'>HIGHSCORES</Link>
     </div>
     <div className="navbar__center">
       <span>GAME</span>
@@ -21,8 +21,8 @@ export default function NavBar(props) {
     </div>
       <div className="navbar__right">
         {!showSignInForm && (<div className="navbar__right__buttons">
-          <Link className="navbar__menu-item" to='signup'>Sign Up</Link>
-          <p className="navbar__menu-item" onClick={() => setShowSignInForm(true)}>Sign In</p>
+          <Link className="navbar__menu-item" to='signup'>SIGN UP</Link>
+          <p className="navbar__menu-item" onClick={() => setShowSignInForm(true)}>SIGN IN</p>
         </div>)}
         {showSignInForm && <SignInForm setShowSignInForm={setShowSignInForm}/>}
       </div>

@@ -17,7 +17,6 @@ function App() {
   // State controlling ghreetings component (now disabled for debugging)
   //const [showGreetings, setShowGreetings] = useState(true);
   
-
   return (
     <Router>
       <div className="App">
