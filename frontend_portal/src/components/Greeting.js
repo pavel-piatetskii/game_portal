@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
+import './Greeting.scss'
 
 export default function Greeting(props) {
 
   const { setShowGreeting } = props;
 
   useEffect(() => {
-    setTimeout(() => setShowGreeting(false), 1000)
+    setTimeout(() => setShowGreeting(false), 1500)
   }, [])
 
   return (
-    <div className="navbar__center">
-      <span>GAME</span>
-      <i className="fa fa-shield navbar__center__icon"></i>
-      <span>PORTAL</span>
+    <div className="greeting">
+      <span className="greeting__left">GAME</span>
+      <i className="fa fa-shield greeting__shield"></i>
+      <span className="greeting__right">PORTAL</span>
     </div>
   )
 }
