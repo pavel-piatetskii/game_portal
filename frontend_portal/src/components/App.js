@@ -16,7 +16,7 @@ function App() {
   //const [showImageViewer, setShowImageViewer] = useState(false);
 
   // State controlling ghreetings component (now disabled for debugging)
-  const [showGreeting, setShowGreeting] = useState(true);
+  const [showGreeting, setShowGreeting] = useState(false);
 
   return (
     <div className="App">
