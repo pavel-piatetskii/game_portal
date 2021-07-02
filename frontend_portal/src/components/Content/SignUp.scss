@@ -1,0 +1,22 @@
+.signup {
+  &__form {
+    flex-direction: column;
+    border: 0.5vw double black;
+    padding: 2vw;
+    
+    &__header {
+      width: 100%;
+      text-align: center;
+      margin-top: 0;
+    }
+    
+    &__wrapper {
+      justify-content: space-between;
+      margin: 1vw 0;
+    }
+
+    &__label {
+      margin-right: 2vw;
+    }
+  }
+}
