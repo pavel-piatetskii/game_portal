@@ -29,15 +29,39 @@
       
       visibility: hidden;
       padding: 0.8vw 0;
+
       font-size: 1vw;
       margin-right: 1vw;
+      color: red;
     }
 
     &__popup {
       position: fixed;
       display: inline-block;
       visibility: hidden;
-      transform: translate(-50%, -250%);
+      transform: translate(-50%, -175%);
+
+      font-family: 'Electrolize', sans-serif;
+      font-size: 1vw;
+
+      background-color: rgba(#555555, .2);
+      padding: 0.1vw;
+      border-radius: 0.3vw;
+      border: rgba(#999999, .2) solid 0.2vw;
+
+      &::after {
+
+        content: "";
+        position: absolute;
+        top: calc(100% + 0.2vw);
+        left: 50%;
+        border: 15px;
+        margin-left: calc(-15px - 0.4vw);
+        border-style: solid;
+        border-color: rgba(#555555, 0.2) transparent transparent transparent;
+
+        
+      }
     }
 
     &__input {
@@ -73,12 +97,6 @@
   background-color: #FFEEEE;
 }
 
-.exclaim-error {
-  color: red;
+.show {
   visibility: visible;
-}
-
-.popup-error {
-  visibility: visible;
-  font-family: 'Electrolize', sans-serif;
 }

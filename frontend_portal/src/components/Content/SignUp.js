@@ -24,23 +24,23 @@ export default function SignUp(props) {
 
     if (!login) {
       loginForm.classList.add('input-error');
-      exclaimLogin.classList.add('exclaim-error');
-      popupLogin.innerText= 'Где логин, Лебовски?';
-      popupLogin.classList.add('popup-error');
+      exclaimLogin.classList.add('show');
+      popupLogin.innerText= 'Please enter login';
+      popupLogin.classList.add('show');
     }
 
     if (!password) {
       passwordForm.classList.add('input-error');
-      exclaimPassword.classList.add('exclaim-error');
-      popupPassword.innerText= 'Где пароль, Лебовски?';
-      popupPassword.classList.add('popup-error');
+      exclaimPassword.classList.add('show');
+      popupPassword.innerText= 'Please, enter password';
+      popupPassword.classList.add('show');
     }
 
     if (!passwordRepeat) {
       passwordRepeatForm.classList.add('input-error');
-      exclaimRepeatPassword.classList.add('exclaim-error');
-      popupRepeatPassword.innerText= 'Где повтор пароля, Лебовски?';
-      popupRepeatPassword.classList.add('popup-error');
+      exclaimRepeatPassword.classList.add('show');
+      popupRepeatPassword.innerText= 'Please, repeat password';
+      popupRepeatPassword.classList.add('show');
     }
 
   };
