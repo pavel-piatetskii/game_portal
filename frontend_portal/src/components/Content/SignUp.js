@@ -26,21 +26,21 @@ export default function SignUp(props) {
       loginForm.classList.add('input-error');
       exclaimLogin.classList.add('show');
       popupLogin.innerText= 'Please enter login';
-      popupLogin.classList.add('show');
+      //popupLogin.classList.add('show');
     }
 
     if (!password) {
       passwordForm.classList.add('input-error');
       exclaimPassword.classList.add('show');
       popupPassword.innerText= 'Please, enter password';
-      popupPassword.classList.add('show');
+      //popupPassword.classList.add('show');
     }
 
     if (!passwordRepeat) {
       passwordRepeatForm.classList.add('input-error');
       exclaimRepeatPassword.classList.add('show');
       popupRepeatPassword.innerText= 'Please, repeat password';
-      popupRepeatPassword.classList.add('show');
+      //popupRepeatPassword.classList.add('show');
     }
 
   };

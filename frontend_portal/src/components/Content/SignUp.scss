@@ -33,21 +33,24 @@
       font-size: 1vw;
       margin-right: 1vw;
       color: red;
+      //transition: visibility 1s;
+      //animation: popup-fade 1s none 0s 1;
     }
 
     &__popup {
       position: fixed;
       display: inline-block;
-      visibility: hidden;
       transform: translate(-50%, -175%);
 
       font-family: 'Electrolize', sans-serif;
       font-size: 1vw;
+      color: darkred;
 
       background-color: rgba(#555555, .2);
       padding: 0.1vw;
       border-radius: 0.3vw;
       border: rgba(#999999, .2) solid 0.2vw;
+
 
       &::after {
 
@@ -95,8 +98,16 @@
   border: 0.2vw red solid;
   border-radius: 0.3vw;
   background-color: #FFEEEE;
+  transition: all 0.2s;
 }
 
 .show {
   visibility: visible;
+  animation: popup-fade 0.2s none 0s 1;
+
+}
+
+@keyframes popup-fade {
+  from {opacity: 0};
+  to {opacity: 1};
 }
