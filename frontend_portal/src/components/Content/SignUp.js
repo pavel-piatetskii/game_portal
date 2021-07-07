@@ -12,8 +12,8 @@ export default function SignUp(props) {
     // Login
     const loginForm = document.getElementById('signup-login');
     if (!login) {
-      console.log('Etnter the login');
-      document.getElementById('signup-login').classList.add('rborder')
+      console.log('Etnter the login');//fa-exclamation-circle
+      loginForm.classList.add('input-error');
     }
 
   };
@@ -36,15 +36,18 @@ export default function SignUp(props) {
 
         <div className="signup__form__wrapper">
           <label className="signup__form__label" htmlFor="signup-login">ENTER LOGIN</label>
+          <i className="fa fa-exclamation-circle signup__form__exclaim"></i>
           <input 
           className="signup__form__input" 
           id="signup-login" 
           name="login"
-          onChange={(e) => setLogin(e.target.value)}></input>
+          onChange={(e) => setLogin(e.target.value)}
+          onFocus={(e) => e.target.classList.remove('input-error')}></input>
         </div>
 
         <div className="signup__form__wrapper">
           <label className="signup__form__label" htmlFor="signup-password">ENTER PASSWORD</label>
+          <i className="fa fa-exclamation-circle signup__form__exclaim"></i>
           <input 
           className="signup__form__input" 
           id="signup-password" 
@@ -55,6 +58,7 @@ export default function SignUp(props) {
 
         <div className="signup__form__wrapper">
           <label className="signup__form__label" htmlFor="signup-password-repeat">REPEAT PASSWORD</label>
+          <i className="fa fa-exclamation-circle signup__form__exclaim"></i>
           <input 
           className="signup__form__input" 
           id="signup-login-repeat" 
