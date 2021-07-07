@@ -6,18 +6,31 @@ export default function SignUp(props) {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('');
+
+  const validateInput = function() {
+
+    // Login
+    const loginForm = document.getElementById('signup-login');
+    if (!login) {
+      console.log('Etnter the login');
+      document.getElementById('signup-login').classList.add('rborder')
+    }
+
+  };
   
   const clickSubmit = function(e) {
+    console.log(e);
     e.preventDefault();
-    console.log(login);
-    console.log(password);
-    console.log(passwordRepeat);
-  }
+    validateInput();
+    //console.log(login);
+    //console.log(password);
+    //console.log(passwordRepeat);
+  };
 
 
   return (
     <section className="signup">
-      <form className="signup__form">
+      <form className="signup__form" onSubmit={(e) => clickSubmit(e)} >
         
         <h2 className="signup__form__header">SIGN UP</h2>
 
@@ -36,6 +49,7 @@ export default function SignUp(props) {
           className="signup__form__input" 
           id="signup-password" 
           name="password"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}></input>
         </div>
 
@@ -45,10 +59,11 @@ export default function SignUp(props) {
           className="signup__form__input" 
           id="signup-login-repeat" 
           name="password-repeat"
+          type="password"
           onChange={(e) => setPasswordRepeat(e.target.value)}></input>
         </div>
 
-        <button onClick={(e) => clickSubmit(e)} className="signup__form__button">SUBMIT</button>
+        <button className="signup__form__button">SUBMIT</button>
 
       </form>
     </section>

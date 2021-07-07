@@ -19,6 +19,16 @@
 
     &__label {
       margin-right: 2vw;
+      padding: 1em 0;
+    }
+
+    &__input {
+      border: 0.2vw black solid;
+      border-radius: 0.3vw;
+      height: 1.5em;
+      font-size: 1.3vw;
+      font-family: 'Electrolize', sans-serif;
+
     }
 
     &__button {
@@ -37,4 +47,9 @@
       border-radius: 0.2em;
     }
   }
+}
+
+.rborder {
+  border: 0.2vw red solid;
+  border-radius: 0.3vw;
 }
