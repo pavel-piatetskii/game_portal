@@ -8,26 +8,36 @@
     &__header {
       width: 100%;
       text-align: center;
-      margin-top: 0;
+      margin: 0 0 2vw 0;
     }
     
     &__wrapper {
-      justify-content: space-between;
+      justify-content: flex-end;
       margin: 1vw 0;
       width: 100%
     }
 
     &__label {
+      width: 100%;
       margin-right: 2vw;
       padding: 0.8em 0;
       font-size: 1.1vw;
+      text-align: start;
     }
     
     &__exclaim {
       
-      //text-align: end;
+      visibility: hidden;
       padding: 0.8vw 0;
       font-size: 1vw;
+      margin-right: 1vw;
+    }
+
+    &__popup {
+      position: fixed;
+      display: inline-block;
+      visibility: hidden;
+      transform: translate(-50%, -250%);
     }
 
     &__input {
@@ -61,4 +71,14 @@
   border: 0.2vw red solid;
   border-radius: 0.3vw;
   background-color: #FFEEEE;
+}
+
+.exclaim-error {
+  color: red;
+  visibility: visible;
+}
+
+.popup-error {
+  visibility: visible;
+  font-family: 'Electrolize', sans-serif;
 }

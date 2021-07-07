@@ -11,15 +11,42 @@ export default function SignUp(props) {
 
     // Login
     const loginForm = document.getElementById('signup-login');
+    const exclaimLogin = document.getElementById('exclaim-login');
+    const popupLogin = document.getElementById('popup-login');
+
+    const passwordForm = document.getElementById('signup-password');
+    const exclaimPassword = document.getElementById('exclaim-password');
+    const popupPassword = document.getElementById('popup-password');
+
+    const passwordRepeatForm = document.getElementById('signup-password-repeat');
+    const exclaimRepeatPassword = document.getElementById('exclaim-password-repeat');
+    const popupRepeatPassword = document.getElementById('popup-password-repeat');
+
     if (!login) {
-      console.log('Etnter the login');//fa-exclamation-circle
       loginForm.classList.add('input-error');
+      exclaimLogin.classList.add('exclaim-error');
+      popupLogin.innerText= 'Где логин, Лебовски?';
+      popupLogin.classList.add('popup-error');
+    }
+
+    if (!password) {
+      passwordForm.classList.add('input-error');
+      exclaimPassword.classList.add('exclaim-error');
+      popupPassword.innerText= 'Где пароль, Лебовски?';
+      popupPassword.classList.add('popup-error');
+    }
+
+    if (!passwordRepeat) {
+      passwordRepeatForm.classList.add('input-error');
+      exclaimRepeatPassword.classList.add('exclaim-error');
+      popupRepeatPassword.innerText= 'Где повтор пароля, Лебовски?';
+      popupRepeatPassword.classList.add('popup-error');
     }
 
   };
   
   const clickSubmit = function(e) {
-    console.log(e);
+    //console.log(e);
     e.preventDefault();
     validateInput();
     //console.log(login);
@@ -36,7 +63,10 @@ export default function SignUp(props) {
 
         <div className="signup__form__wrapper">
           <label className="signup__form__label" htmlFor="signup-login">ENTER LOGIN</label>
-          <i className="fa fa-exclamation-circle signup__form__exclaim"></i>
+          <i id="exclaim-login" className="fa fa-exclamation-circle signup__form__exclaim">
+            <span id="popup-login" className="signup__form__popup"></span>
+
+          </i>
           <input 
           className="signup__form__input" 
           id="signup-login" 
@@ -47,7 +77,10 @@ export default function SignUp(props) {
 
         <div className="signup__form__wrapper">
           <label className="signup__form__label" htmlFor="signup-password">ENTER PASSWORD</label>
-          <i className="fa fa-exclamation-circle signup__form__exclaim"></i>
+          <i id="exclaim-password" className="fa fa-exclamation-circle signup__form__exclaim">
+            <span id="popup-password" className="signup__form__popup"></span>
+          </i>
+          
           <input 
           className="signup__form__input" 
           id="signup-password" 
@@ -58,10 +91,12 @@ export default function SignUp(props) {
 
         <div className="signup__form__wrapper">
           <label className="signup__form__label" htmlFor="signup-password-repeat">REPEAT PASSWORD</label>
-          <i className="fa fa-exclamation-circle signup__form__exclaim"></i>
+          <i id="exclaim-password-repeat" className="fa fa-exclamation-circle signup__form__exclaim">
+            <span id="popup-password-repeat" className="signup__form__popup"></span>
+          </i>
           <input 
           className="signup__form__input" 
-          id="signup-login-repeat" 
+          id="signup-password-repeat" 
           name="password-repeat"
           type="password"
           onChange={(e) => setPasswordRepeat(e.target.value)}></input>
