@@ -8,24 +8,27 @@ export default function SignUp(props) {
     {
       name: 'login',
       label: 'ENTER LOGIN',
+      type: 'login',
       emptyMessage: 'Please enter login',
       wrongMessage: 'Login should be 3-32 characters long',
       checkCorrect: function(str) {
-        return str.length > 2 && str.length < 32
+        return str.length > 2 && str.length <= 32
       },
     },
     {
       name: 'password',
       label: 'ENTER PASSWORD',
+      type: 'password',
       emptyMessage: 'Please enter password',
-      wrongMessage: 'password should be at least 8 characteres long',
+      wrongMessage: 'Password should be at least 8 characteres long',
       checkCorrect: function(str) {
-        return str.length > 8 && str.length < 256
+        return str.length >= 8 && str.length <= 256
       },
     }, 
     {
       name: 'password-repeat',
       label: 'REPEAT PASSWORD',
+      type: 'password',
       emptyMessage: 'Please repeat password',
       wrongMessage: 'Passwords do not match',
       checkCorrect: function(str) {
@@ -88,8 +91,9 @@ export default function SignUp(props) {
     }
   }
 
-  const clearError = function(e) {
-    console.log(e)
+  const clearError = function(id) {
+    document.getElementById(id).classList.remove('input-error');
+    document.getElementById(`exclaim-${id.replace(/signup-/, '')}`).classList.remove('show');
   }
 
   const clickSubmit = function (e) {
@@ -114,8 +118,10 @@ export default function SignUp(props) {
               className="signup__form__input"
               id={`signup-${field.name}`}
               name={`${field.name}`}
+              autoComplete='off'
+              type={field.type}
               //onChange={(e) => setLogin(e.target.value)}
-              onFocus={(e) => clearError(e)}></input>
+              onFocus={(e) => clearError(e.target.id)}></input>
           </div>
         )}
         <button className="signup__form__button">SUBMIT</button>
