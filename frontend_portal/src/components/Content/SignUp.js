@@ -10,18 +10,27 @@ export default function SignUp(props) {
       label: 'ENTER LOGIN',
       emptyMessage: 'Please enter login',
       wrongMessage: 'Login should be 3-32 characters long',
+      checkCorrect: function(str) {
+        return str.length > 2 && str.length < 32
+      },
     },
     {
       name: 'password',
       label: 'ENTER PASSWORD',
       emptyMessage: 'Please enter password',
       wrongMessage: 'password should be at least 8 characteres long',
+      checkCorrect: function(str) {
+        return str.length > 8 && str.length < 256
+      },
     }, 
     {
       name: 'password-repeat',
       label: 'REPEAT PASSWORD',
       emptyMessage: 'Please repeat password',
       wrongMessage: 'Passwords do not match',
+      checkCorrect: function(str) {
+        return str === document.getElementById('signup-password').value
+      },
     }, 
   ];
 
@@ -60,19 +69,31 @@ export default function SignUp(props) {
   //     popupRepeatPassword.innerText = 'Please, repeat password';
   //     //popupRepeatPassword.classList.add('show');
   //   }
-
   // };
 
   const validateInput = function () {
     for (const field of signUpForm) {
-      const input = document.getElementById(`signup-${field.name}`)
-      console.log(input.value);
+
+      const { name, emptyMessage, wrongMessage } = field;
+
+      const input = document.getElementById(`signup-${name}`);
+      const exclaim = document.getElementById(`exclaim-${name}`);
+      const popup = document.getElementById(`popup-${name}`);
+      
+      if (!input.value || !field.checkCorrect(input.value)) {
+        input.classList.add('input-error');
+        exclaim.classList.add('show');
+        popup.innerText = (!input.value) ? emptyMessage : wrongMessage;
+      }
     }
+  }
+
+  const clearError = function(e) {
+    console.log(e)
   }
 
   const clickSubmit = function (e) {
     e.preventDefault();
-    //signUpForm.map(field)
     validateInput();
   };
 
@@ -94,7 +115,7 @@ export default function SignUp(props) {
               id={`signup-${field.name}`}
               name={`${field.name}`}
               //onChange={(e) => setLogin(e.target.value)}
-              onFocus={(e) => e.target.classList.remove('input-error')}></input>
+              onFocus={(e) => clearError(e)}></input>
           </div>
         )}
         <button className="signup__form__button">SUBMIT</button>
