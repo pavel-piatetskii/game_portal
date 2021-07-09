@@ -25,48 +25,55 @@ export default function SignUp(props) {
     }, 
   ];
 
+  // const validateInput = function () {
+
+  //   // Login
+  //   const loginForm = document.getElementById('signup-login');
+  //   const exclaimLogin = document.getElementById('exclaim-login');
+  //   const popupLogin = document.getElementById('popup-login');
+
+  //   const passwordForm = document.getElementById('signup-password');
+  //   const exclaimPassword = document.getElementById('exclaim-password');
+  //   const popupPassword = document.getElementById('popup-password');
+
+  //   const passwordRepeatForm = document.getElementById('signup-password-repeat');
+  //   const exclaimRepeatPassword = document.getElementById('exclaim-password-repeat');
+  //   const popupRepeatPassword = document.getElementById('popup-password-repeat');
+
+  //   if (!login) {
+  //     loginForm.classList.add('input-error');
+  //     exclaimLogin.classList.add('show');
+  //     popupLogin.innerText = 'Please enter login';
+  //     //popupLogin.classList.add('show');
+  //   }
+
+  //   if (!password) {
+  //     passwordForm.classList.add('input-error');
+  //     exclaimPassword.classList.add('show');
+  //     popupPassword.innerText = 'Please, enter password';
+  //     //popupPassword.classList.add('show');
+  //   }
+
+  //   if (!passwordRepeat) {
+  //     passwordRepeatForm.classList.add('input-error');
+  //     exclaimRepeatPassword.classList.add('show');
+  //     popupRepeatPassword.innerText = 'Please, repeat password';
+  //     //popupRepeatPassword.classList.add('show');
+  //   }
+
+  // };
+
   const validateInput = function () {
-
-    // Login
-    const loginForm = document.getElementById('signup-login');
-    const exclaimLogin = document.getElementById('exclaim-login');
-    const popupLogin = document.getElementById('popup-login');
-
-    const passwordForm = document.getElementById('signup-password');
-    const exclaimPassword = document.getElementById('exclaim-password');
-    const popupPassword = document.getElementById('popup-password');
-
-    const passwordRepeatForm = document.getElementById('signup-password-repeat');
-    const exclaimRepeatPassword = document.getElementById('exclaim-password-repeat');
-    const popupRepeatPassword = document.getElementById('popup-password-repeat');
-
-    if (!login) {
-      loginForm.classList.add('input-error');
-      exclaimLogin.classList.add('show');
-      popupLogin.innerText = 'Please enter login';
-      //popupLogin.classList.add('show');
+    for (const field of signUpForm) {
+      const input = document.getElementById(`signup-${field.name}`)
+      console.log(input.value);
     }
-
-    if (!password) {
-      passwordForm.classList.add('input-error');
-      exclaimPassword.classList.add('show');
-      popupPassword.innerText = 'Please, enter password';
-      //popupPassword.classList.add('show');
-    }
-
-    if (!passwordRepeat) {
-      passwordRepeatForm.classList.add('input-error');
-      exclaimRepeatPassword.classList.add('show');
-      popupRepeatPassword.innerText = 'Please, repeat password';
-      //popupRepeatPassword.classList.add('show');
-    }
-
-  };
+  }
 
   const clickSubmit = function (e) {
     e.preventDefault();
     //signUpForm.map(field)
-    //validateInput();
+    validateInput();
   };
 
 
@@ -86,7 +93,7 @@ export default function SignUp(props) {
               className="signup__form__input"
               id={`signup-${field.name}`}
               name={`${field.name}`}
-              onChange={(e) => setLogin(e.target.value)}
+              //onChange={(e) => setLogin(e.target.value)}
               onFocus={(e) => e.target.classList.remove('input-error')}></input>
           </div>
         )}
