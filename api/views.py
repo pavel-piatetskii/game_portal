@@ -5,9 +5,12 @@ from rest_framework.utils import serializer_helpers
 from api.models import User
 
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, status
 from .serializers import UserSerializer
 from .models import User
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
 
 # Create your views here.
 #def main(request):
