@@ -15,8 +15,8 @@ function App() {
   //const [showImageViewer, setShowImageViewer] = useState(false);
   
   // State controlling ghreetings component (now disabled for debugging)
-  //const [showGreetings, setShowGreetings] = useState(true);
-  
+  // const [showGreeting, setShowGreeting] = useState(false);
+
   return (
     <Router>
       <div className="App">
