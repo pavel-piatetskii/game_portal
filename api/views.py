@@ -20,12 +20,17 @@ class UserView(generics.CreateAPIView):
   queryset = User.objects.all()
   serializer_class = UserSerializer
 
-class CreareUserView(APIView)
-  serializer_class = CreateUserSerializer
+# class CreareUserView(APIView):
+#   serializer_class = CreateUserSerializer
 
-  def post(self, request, format=none):
-    # if not self.request.session.exists(self.request.session.session_key)
-    #   self.request.session.create()
+#   def post(self, request, format=None):
+#     # if not self.request.session.exists(self.request.session.session_key)
+#     #   self.request.session.create()
 
-    serializer = self.serializer_class(data=request.data)
-    #if 
+#     serializer = self.serializer_class(data=request.data)
+#     if serializer.is_valid():
+#       login = serializer.data.login
+#       password = serializer.data.password
+
+#       queryset = User.objects.filter(login=login);
+#       if queryset.exists():
